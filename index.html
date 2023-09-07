@@ -4,15 +4,34 @@
   </head>
   <body>
 
-    <figure class="highcharts-figure">
-      <div id="parent-container">
-        <div id="play-controls">
-          <button id="play-pause-button" class="fa fa-play" title="play"></button>
-          <input id="play-range" type="range" value="1896" min="1896" max="2016" />
+    <div class="p-5">
+      <div class="flex justify-between items-center">
+        <div class="">
+          <div class="text-3xl font-bold">Olympics</div>
+          <div class="text-sm text-gray-400">Analysis with olympics medals</div>
         </div>
-        <div id="container"></div>
+        <div class="">
+          <select name="olympics_medals" id="olympics_medals" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-4 py-2.5">
+            <option value="">Medals</option>
+            <option value="Bronze">Bronze</option>
+            <option value="Silver">Silver</option>
+            <option value="Gold">Gold</option>
+          </select>
+        </div>
       </div>
-    </figure>
+
+      <div id="loading"></div>
+      <figure class="highcharts-figure">
+            <div id="parent-container">
+              <div id="play-controls">
+                <button id="play-pause-button" class="fa fa-play" title="play"></button>
+                <input id="play-range" type="range" value="1896" min="1896" max="2016" class="w-full h-2 rounded-lg appearance-none cursor-pointer" />
+              </div>
+              <div id="container"></div>
+            </div>
+          </figure>
+    </div>
+    
     
 
     <script src="./public/lib/chart/highcharts.js"></script>
