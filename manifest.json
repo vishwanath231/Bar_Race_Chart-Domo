@@ -1,0 +1,17 @@
+{
+  "name": "domo_bar_race",
+  "version": "1.0.0",
+  "size": {
+    "width": 5,
+    "height": 2
+  },
+  "mapping": [
+    {
+      "dataSetId": "f1d04ecb-90fa-4cf0-b85c-f19ab8d29b29",
+      "alias": "olympics",
+      "fields": []
+    }
+  ],
+  "fileName": "manifest.json",
+  "id": "624ff569-b32d-406e-95fa-20996a28b38c"
+}
