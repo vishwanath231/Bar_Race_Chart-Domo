@@ -6,7 +6,7 @@
 //
 // For additional documentation on how you can query your data, please refer to
 // https://developer.domo.com/docs/dev-studio/dev-studio-data
-domo.get('/data/v2/olympics?filter=Medal==Silver')
+domo.get('/data/v2/olympics?filter=Medal==Gold')
 .then(function(response){
 
   const sportsName = [];
@@ -72,24 +72,13 @@ domo.get('/data/v2/olympics?filter=Medal==Silver')
       year: year,
       count: count
     });
-
-    
-    
   }
    
-  // console.log(finalData);
-
-//   const asd = duplicates.reduce((accumulator, value) => {
-//     return { ...accumulator, [value.year]: value.count };
-//   }, {})
-
-// console.log(asd);
 
   const startYear = uniqueSportsYear[0],
     endYear = uniqueSportsYear[uniqueSportsYear.length - 1],
     btn = document.getElementById('play-pause-button'),
-    input = document.getElementById('play-range'),
-    nbr = 20;
+    input = document.getElementById('play-range');
     
 
   let chart;
@@ -175,7 +164,7 @@ domo.get('/data/v2/olympics?filter=Medal==Silver')
 
 
 
-
+ 
   function getData(year) {
     let arra = [];
     [finalData].forEach(val => {
@@ -186,17 +175,16 @@ domo.get('/data/v2/olympics?filter=Medal==Silver')
       })
     })
 
+    // remove empty values
     // let finalFilter = [];
     // arra.forEach((val) => {
     //     if (val[1] !== 0) {
     //       finalFilter.push([val[0], Number(val[1])])
     //     }
     // })
-
     // return finalFilter;
 
     return arra;
-    // return [arra[0], arra.slice(1, 6)]
   }
 
 
@@ -300,25 +288,12 @@ domo.get('/data/v2/olympics?filter=Medal==Silver')
     });
   })();
 
-
-
-
-
-
-
-
-
-
-
-
-
   function pause(button) {
     button.title = 'play';
     button.className = 'fa fa-play';
     clearTimeout(chart.sequenceTimer);
     chart.sequenceTimer = undefined;
   }
-
 
   function update(increment) {
 
